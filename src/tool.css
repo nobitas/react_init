@@ -1,0 +1,16 @@
+$yellow: green;
+$num: 2;
+
+:root {
+	--rd: red;
+}
+
+@define-mixin icon $color { 
+		background-color: $color; 
+		@mixin-content; 
+}
+
+%test {
+	display: flex;
+	justify-content: space-between;
+}

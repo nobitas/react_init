@@ -1,10 +1,21 @@
+@import './tool';
 
 h3 {
 	width: 375px;
-	background: #f00;
 	transform: translate(0,0);
-	display: flex;
-	&.h3 {
-		color: yellow;
+	@extend %test;
+	@extend p;
+	@if $num < 1 {
+		font-size: 30px;
 	}
+	@else{
+		font-size: 60px;
+	}
+	&.h3 {
+		color: var(--rd);
+		font-weight: bolder;
+	}
+}
+p {
+	background: $yellow;
 }
