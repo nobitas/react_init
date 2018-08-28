@@ -1,0 +1,10 @@
+
+h3 {
+	width: 375px;
+	background: #f00;
+	transform: translate(0,0);
+	display: flex;
+	&.h3 {
+		color: yellow;
+	}
+}
