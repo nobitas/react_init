@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'vw-layout';
 
 import _ from './index.css';
 

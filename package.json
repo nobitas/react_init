@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "vw-layout": "^1.0.6"
   },
   "private": true
 }
