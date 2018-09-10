@@ -1,10 +1,15 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html"
-});
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: "/",
+  },
+  entry: path.resolve(__dirname, './src/index.js'),
   module: {
     rules: [
       {
@@ -17,9 +22,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-		      {
-		      	loader: "style-loader"
-		      },
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
 		      {
 		      	loader: "css-loader",
 		      	options: {
@@ -47,5 +50,17 @@ module.exports = {
 　　　 }
     ]
   },
-  plugins: [ htmlPlugin ]
+  plugins: [ 
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css'
+    })
+  ],
+  devServer: {
+    historyApiFallback: true, // 请求404时打开index页面。
+    compress: true
+  }
 };
