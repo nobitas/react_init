@@ -60,6 +60,9 @@ module.exports = {
     })
   ],
   devServer: {
+    proxy: { // proxy URLs to backend development server
+      '/api/v2': 'http://47.75.140.109:9004/'
+    },
     historyApiFallback: true, // 请求404时打开index页面。
     compress: true,
     host: '0.0.0.0',
