@@ -6,7 +6,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle_[hash].js',
     publicPath: "/",
   },
   entry: path.resolve(__dirname, './src/index.js'),
@@ -61,6 +61,8 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true, // 请求404时打开index页面。
-    compress: true
+    compress: true,
+    host: '0.0.0.0',
+    port: 8080
   }
 };
