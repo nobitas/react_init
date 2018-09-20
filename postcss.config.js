@@ -1,10 +1,10 @@
 module.exports = {
   plugins: [
-  	require('import-postcss'),
+  	require('postcss-import'),
   	require('postcss-mixins'),
     require('precss'),
     require('autoprefixer'),
-    require('postcss-aspect-ratio-mini'),
+    /*require('postcss-aspect-ratio-mini'),
     require('postcss-px-to-viewport')({
     	viewportWidth: 750,      // (Number) The width of the viewport.
         viewportHeight: 1334,    // (Number) The height of the viewport.
@@ -14,6 +14,6 @@ module.exports = {
         minPixelValue: 1,       // (Number) Set the minimum pixel value to replace.
         mediaQuery: false       // (Boolean) Allow px to be converted in media queries.
     }),
-    require('postcss-viewport-units')
+    require('postcss-viewport-units')*/
   ]
 }
